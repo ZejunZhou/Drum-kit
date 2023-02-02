@@ -4,6 +4,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
        var buttonHtml = this.innerHTML;
        createSound(buttonHtml);
+       buttonAnimation(buttonHtml);
     })
 }
 
@@ -14,6 +15,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
 document.addEventListener("keydown", function(keyDownEvent){
     var keyPressed = keyDownEvent.key;
     createSound(keyPressed);
+    buttonAnimation(keyPressed);
 })
 
 /****take sounds value of different event such as click and keydown */
@@ -51,4 +53,17 @@ function createSound (sounds){
         default:
             console.log(sounds);
     }
+}
+
+function buttonAnimation(currentButton){
+    // find out the html of currentButton being pressed or clicked
+    var buttonHTML = document.querySelector("." + currentButton);
+
+    buttonHTML.classList.add("pressed");
+    
+    // remove the pressed class from classlist after 100 milisec
+    setTimeout(function(){
+        buttonHTML.classList.remove("pressed");
+    }, 100)
+
 }
