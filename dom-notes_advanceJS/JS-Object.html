@@ -9,6 +9,9 @@ Example:
 function DefineBoys(name, age){
     this.name = name;
     this.age = age;
+    this.clean = function(){
+        alert("clean is in progress");
+    }
 }
 
 <br>
@@ -16,3 +19,11 @@ function DefineBoys(name, age){
 Then create object,
 
 <pre>var boys = new DefineBoys("Zejun", 21)</pre>
+
+access object attribute
+
+<pre>boys.name</pre>
+
+access object method
+
+<pre>boys.clean()</pre>
