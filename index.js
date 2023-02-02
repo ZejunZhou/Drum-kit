@@ -9,6 +9,8 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
 
 /***********Add eventlister to target entire page, keydown as event and asynoumous function as response */
 
+//keyDownEvent is the event object trigger the event 
+
 document.addEventListener("keydown", function(keyDownEvent){
     var keyPressed = keyDownEvent.key;
     createSound(keyPressed);
